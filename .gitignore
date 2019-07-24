@@ -1,2 +1,5 @@
 vendor
 wp-content
+node_modules
+main.min.css
+main.min.js
