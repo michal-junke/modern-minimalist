@@ -151,6 +151,13 @@ function webpack_custom_styles() {
 	wp_enqueue_style('custom-css', get_template_directory_uri() . '/main.min.css', array(), filemtime(get_template_directory() . '/main.min.css'));
 }
 add_action( 'wp_enqueue_scripts', 'webpack_custom_styles');
+
+//Disable gutenberg style in Front
+function wps_deregister_styles() {
+    wp_dequeue_style( 'wp-block-library' );
+}
+add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );
+        
 // Adding Bulma classes to Block Editor Button
 add_filter( 'render_block', function( $block_content, $block ) {
 	if ( 'core/button' === $block['blockName'] && isset( $block['attrs']['className'] ) ) {
