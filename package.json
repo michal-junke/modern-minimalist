@@ -1,0 +1,56 @@
+{
+  "name": "modern-minimalist",
+  "version": "0.1.0",
+  "description": "WordPress theme developed for my website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production --progress",
+    "watch": "webpack --watch --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rharill/modern-minimalist.git"
+  },
+  "keywords": [
+    "Theme",
+    "WordPress",
+    "Timber",
+    "Webpack"
+  ],
+  "author": "Michał Junke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rharill/modern-minimalist/issues"
+  },
+  "homepage": "https://github.com/rharill/modern-minimalist#README",
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.0.0",
+    "autoprefixer": "^9.4.3",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^2.0.1",
+    "cssnano": "^4.1.7",
+    "extract-loader": "^3.1.0",
+    "file-loader": "^2.0.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "path": "^0.12.7",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "sass-resources-loader": "^2.0.0",
+    "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^1.1.0",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "dependencies": {
+    "bulma": "^0.7.5",
+    "lodash.debounce": "^4.0.8"
+  }
+}
