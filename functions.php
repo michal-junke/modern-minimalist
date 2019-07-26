@@ -142,3 +142,12 @@ class StarterSite extends Timber\Site {
 }
 
 new StarterSite();
+
+// Enqueuing main minified files
+function webpack_custom_styles() {
+	// Enqueue main js file
+	wp_enqueue_script( 'custom-js', get_template_directory_uri() . '/main.min.js', array(), filemtime(get_template_directory() . '/main.min.js'), true);
+	// Enqueue css
+	wp_enqueue_style('custom-css', get_template_directory_uri() . '/main.min.css', array(), filemtime(get_template_directory() . '/main.min.css'));
+}
+add_action( 'wp_enqueue_scripts', 'webpack_custom_styles');
