@@ -151,3 +151,58 @@ function webpack_custom_styles() {
 	wp_enqueue_style('custom-css', get_template_directory_uri() . '/main.min.css', array(), filemtime(get_template_directory() . '/main.min.css'));
 }
 add_action( 'wp_enqueue_scripts', 'webpack_custom_styles');
+// Adding Bulma classes to Block Editor Button
+add_filter( 'render_block', function( $block_content, $block ) {
+	if ( 'core/button' === $block['blockName'] && isset( $block['attrs']['className'] ) ) {
+		// Setting up a subset of custom button link classes. Using regex to avoid breaking container classes
+		$allowed_button_link_classes = array(
+			'/\sbutton/',
+			'/is-primary/',
+			'/is-link/',
+			'/is-info/',
+			'/is-success/',
+			'/is-warning/',
+			'/is-danger/',
+			'/is-white/',
+			'/is-light/',
+			'/is-dark/',
+			'/is-black/',
+			'/is-text/',
+			'/is-small/',
+			'/is-normal/',
+			'/is-medium/',
+			'/is-large/',
+			'/is-outlined/',
+			'/is-fullwidth/',
+			'/is-inverted/',
+			'/is-rounded/',
+			'/is-hovered/',
+			'/is-focused/',
+			'/is-active/',
+			// ...
+		);
+
+		
+		// Remove allowed button link classes from the button container first.
+		$block_content = preg_replace(
+			$allowed_button_link_classes,
+			'',
+			$block_content
+		);
+
+		// Replacing regex with strings to make it able to use array_intersect
+		$allowed_button_link_classes = str_replace(array('/', '\s'), '', $allowed_button_link_classes);
+
+		// Get custom button classes set for the block.
+		$custom_classes = explode( ' ', $block['attrs']['className'] );
+
+		// Apply allowed custom button link classes.
+		$block_content = str_replace(
+			'wp-block-button__link',
+			'wp-block-button__link ' . implode( ' ', array_intersect( $custom_classes, $allowed_button_link_classes ) ),
+			$block_content
+		);
+	}
+
+	return $block_content;
+}, 5, 2 );
