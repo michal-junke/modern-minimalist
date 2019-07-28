@@ -157,6 +157,9 @@ function wps_deregister_styles() {
     wp_dequeue_style( 'wp-block-library' );
 }
 add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );
+
+// Enable theme support for alignwide and alignfull classes from editor
+add_theme_support( 'align-wide' );
         
 // Adding Bulma classes to Block Editor Button
 add_filter( 'render_block', function( $block_content, $block ) {

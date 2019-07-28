@@ -1,0 +1,50 @@
+// Default responsive container
+.grid {
+    display: grid;
+    grid-template-columns: 
+      [xl-start] 1fr 1.5rem [header-start] minmax(0,50px) [wide-start] minmax(0, 200px) [md-start] minmax(0, 700px) [md-end] minmax(0,200px) [wide-end] minmax(0, 50px) [header-end] 1.5rem 1fr [xl-end];
+  }
+  
+  // Aligning all items to the width of container
+  .grid *                  { grid-column: md; }
+  .grid-wide, .alignwide   { grid-column: wide; }
+  .grid-header             {grid-column: header; }
+  .grid-xl, .alignfull     { grid-column: xl; }
+  
+  // If width of the container is smaller than grid-header -> aplly second widest position (not fullwidth) to all elements to avoid bigger gap on the sides
+  @media (max-width: 1199px) {
+    .grid *, .grid-wide {
+      grid-column: header;
+    }
+  }
+
+  // Styles for wp-block-columns
+
+  .wp-block-columns {
+    @include desktop {
+      display: grid;
+      grid-gap: 1.5rem;
+
+      :first-child {
+        grid-area: first;
+      }
+
+      :nth-child(2) {
+        grid-area: second;
+      }
+
+      :nth-child(3) {
+        grid-area: third;
+      }
+
+      &.has-2-columns {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "first second";
+      }
+
+      &.has-3-columns {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "first second third";
+    }
+  }
+  }
