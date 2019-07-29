@@ -1,0 +1,19 @@
+// Hide all skip-links if are not targeted with keyboard
+.skip-link {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+// If user targets skip-link with keyboard, show it in the left upper corner (usable for sighted keyboard users)
+// Screen reader users will still be able to interact with the element
+.skip-link:focus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+}
