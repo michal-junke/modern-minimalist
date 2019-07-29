@@ -6,14 +6,14 @@
   }
   
   // Aligning all items to the width of container
-  .grid *                  { grid-column: md; }
+  .grid > *                  { grid-column: md; }
   .grid-wide, .alignwide   { grid-column: wide; }
   .grid-header             {grid-column: header; }
   .grid-xl, .alignfull     { grid-column: xl; }
   
   // If width of the container is smaller than grid-header -> aplly second widest position (not fullwidth) to all elements to avoid bigger gap on the sides
   @media (max-width: 1199px) {
-    .grid *, .grid-wide {
+    .grid > *, .grid-wide {
       grid-column: header;
     }
   }
@@ -47,4 +47,4 @@
         grid-template-areas: "first second third";
     }
   }
-  }
+}
