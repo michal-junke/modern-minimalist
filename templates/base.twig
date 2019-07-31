@@ -12,20 +12,29 @@
 		<header class="header grid">
 			<div class="header-wrapper grid-header">
 			{% block header %}
-				<div class="wrapper">
-					<h1 class="hdr-logo" role="banner">
-						<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
-					</h1>
-					<nav id="nav-main" class="nav-main" role="navigation">
+					<nav id="nav" class="navbar" role="navigation">
+						<div class="navbar-brand">
+							<a class="brand__link navbar-item" href="{{site.url}}" rel="home"><img src="/wp-content/themes/modern-minimalist/img/logo.svg" alt="" class="brand__logo" title="Michał Junke"></a>
+
+							    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
+      								<span aria-hidden="true"></span>
+      								<span aria-hidden="true"></span>
+      								<span aria-hidden="true"></span>
+    							</a>
+						</div>
+						<div class="navbar-menu">
+							<div class="navbar-start">
 						{% include "menu.twig" with {'menu': menu.get_items} %}
-					</nav><!-- #nav -->
+							</div>
+							<div class="navbar-end">
+							</div>
 				</div>
+					</nav>
 			{% endblock %}
 			</div>
 		</header>
 
-		<section id="content" role="main" class="content-wrapper">
-			{% if title %}<h1>{{title}}</h1>{% endif %}
+		<section id="content" role="main" class="content">
 			<div class="wrapper {{sidebar_class}}">
 				{% block content %}
 					Sorry, no content
