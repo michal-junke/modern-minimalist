@@ -24,4 +24,21 @@
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
+
+if (is_front_page()) {
+    $args = array(
+        // Get post type project
+        'post_type' => 'project',
+        // Get all posts
+        'posts_per_page' => -1,
+        // Get posts only if featured
+        'meta_key' => 'featured-project',
+        'meta_value' => true,
+        // Order by custom field
+        'orderby' => array(
+            'date' => 'DESC'
+        ));
+        
+    $context['projects'] = Timber::get_posts( $args );
+}
 Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );

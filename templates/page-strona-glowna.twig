@@ -1,0 +1,36 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+<div class="grid">
+<p>Hej, jestem Michał i jestem twórcą stron internetowych. Pomagam ludziom zaistnieć online poprzez <strong>tworzenie estetycznych i szybkich</strong> stron internetowych.</p>
+
+<hr class="wp-block-separator"/>
+
+<h3>Najnowszy wpis</h3>
+
+<pre class="wp-block-code"><code>Miejsce na najnowszy wpis na moim blogu</code></pre>
+
+<hr class="wp-block-separator"/>
+<section class="projects grid-wide">
+<div class="projects-grid">
+    {% for project in projects %}
+    <a href="{{project.meta('project-url')}}">
+        <div class="project" style="background-image: linear-gradient(to top,{{project.main_color}} 30%, #fff);">
+        <header class="project__text">
+            <h3 class="project-title">{{ project.title}}</h3>
+            <small>{{project.subtitle}}</small>
+            </header>
+            <div class="project__background" style="background-image:url({{Image(project.meta('featured_image')).src('grid-wide')}})"></div>
+        </div>
+    </a>
+    {% endfor %}
+</div> {# projects-grid #}
+</section>
+<section class="contact-me has-text-centered">
+    <p> Skontaktuj się ze mną!</p>
+    <a class="button is-primary" href="/kontakt">Napisz do mnie!</a>
+</section>
+</div> {# grid #}
+
+{% endblock %}
