@@ -1,3 +1,13 @@
+// Variables
+$icomoon-font-family: "mj-icons" !default;
+$icomoon-font-path: "/wp-content/themes/modern-minimalist/static/fonts" !default;
+
+$mji-github: "\f09b";
+$mji-linkedin: "\f0e1";
+$mji-codepen: "\f1cb";
+$mji-heart: "\f004";
+
+// Styles
 @font-face {
   font-family: '#{$icomoon-font-family}';
   src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?xrcqly');
@@ -37,6 +47,11 @@
 .mji-codepen {
   &:before {
     content: $mji-codepen; 
+  }
+}
+.mji-heart {
+  &:before {
+    content: $mji-heart;
   }
 }
 
