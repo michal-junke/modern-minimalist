@@ -216,3 +216,9 @@ add_filter( 'render_block', function( $block_content, $block ) {
 
 	return $block_content;
 }, 5, 2 );
+
+	// Stop recording IP address in comments
+function mj_remove_commentsip( $comment_author_ip ) {
+	return '';
+	}
+add_filter( 'pre_comment_user_ip', 'mj_remove_commentsip' );
