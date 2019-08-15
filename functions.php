@@ -222,3 +222,11 @@ function mj_remove_commentsip( $comment_author_ip ) {
 	return '';
 	}
 add_filter( 'pre_comment_user_ip', 'mj_remove_commentsip' );
+
+// Remove script tags for better compliancy with W3C Recomendations
+
+add_filter('style_loader_tag', 'mj_remove_type_attr', 10, 2);
+add_filter('script_loader_tag', 'mj_remove_type_attr', 10, 2);
+function mj_remove_type_attr($tag, $handle) {
+	return preg_replace( "/type=['\"]text\/(javascript|css)['\"]/", '', $tag );
+}
