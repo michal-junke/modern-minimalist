@@ -217,6 +217,7 @@ add_filter( 'render_block', function( $block_content, $block ) {
 	return $block_content;
 }, 5, 2 );
 
+        'grid-wide' => __( 'Grid Wide' ),
 	// Stop recording IP address in comments
 function mj_remove_commentsip( $comment_author_ip ) {
 	return '';
