@@ -12,32 +12,32 @@
 		<header class="header grid">
 			<div class="header-wrapper grid-header">
 			{% block header %}
-					<nav id="nav" class="navbar" role="navigation">
+					<nav id="nav" class="navbar">
 						<div class="navbar-brand">
 							<a class="brand__link navbar-item" href="{{site.url}}" rel="home"><img src="/wp-content/themes/modern-minimalist/img/logo.svg" alt="" class="brand__logo" title="Michał Junke"></a>
 
-							    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
+							    <a role="button" class="navbar-burger burger js-burger" aria-label="menu" aria-expanded="false">
       								<span aria-hidden="true"></span>
       								<span aria-hidden="true"></span>
       								<span aria-hidden="true"></span>
     							</a>
 						</div>
-						<div class="navbar-menu">
+						<div class="navbar-menu js-main-menu">
 							<div class="navbar-start">
 						{% include "menu.twig" with {'menu': menu.get_items} %}
 							</div>
 							<div class="navbar-end">
-								<a class="navbar-item" href="https://linkedin.com/in/michal-junke">
+								<a class="navbar-item" href="https://linkedin.com/in/michal-junke" aria-label="Przejdź do mojego profilu na Linkedinie">
 									<span class="icon">
 										<i class="mji-linkedin"></i>
 									</span>
 								</a>
-								<a class="navbar-item" href="https://github.com/rharill">
+								<a class="navbar-item" href="https://github.com/rharill" aria-label="Przejdź do mojego profilu na Githubie">
 									<span class="icon">
 										<i class="mji-github"></i>
 									</span>
 								</a>
-								<a class="navbar-item" href="https://codepen.io/Rharill">
+								<a class="navbar-item" href="https://codepen.io/Rharill" aria-label="Przejdź do mojego profilu na Codepenie">
 									<span class="icon">
 										<i class="mji-codepen"></i>
 									</span>
