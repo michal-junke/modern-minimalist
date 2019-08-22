@@ -24,6 +24,8 @@
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
+// Get last post
+$context['lastPost'] = Timber::get_post(array('post_type' => 'post'));
 
 if (is_front_page()) {
     $args = array(

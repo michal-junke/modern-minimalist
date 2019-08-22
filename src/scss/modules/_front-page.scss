@@ -1,0 +1,110 @@
+.my-mission {
+    font-size: 1.5em;
+    padding-top: 20vh;
+    padding-bottom: 3vh;
+}
+
+.main-cta {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15vh;
+}
+
+.last-post {
+    img {
+        transition: all 0.5s ease;    
+    }
+
+    &:hover img {
+        transform: scale(1.02);
+    }
+    
+}
+
+.last-post-title {
+    font-family: IBM Plex Sans, Arial, sans-serif;
+}
+
+.projects .project {
+    padding-bottom: 75%;
+    
+    position: relative;
+    border-radius: .3rem;
+    overflow: hidden;
+
+    
+
+    &:hover .project__background {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+
+    .project__text {
+        position: absolute;
+        color: #fff;
+        left: 5%;
+        z-index: 2;
+
+        @include mobile {
+            padding-top: 0.9rem;
+        }
+    }
+
+    .project-title {
+        font-family: 'IBM Plex Sans', Arial, sans-serif;
+        font-size: 1.4em;
+        margin-bottom: 0.5rem;
+        color: #fff;
+
+
+        @include mobile {
+            font-size: 1.2em;
+        }
+    }
+
+    .what-i-did {
+        display: none;
+
+        @include tablet {
+            display: inline;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+    }
+
+    .project__background {
+        background-size: contain;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        transform: scale(1.02);
+        transition: all 0.5s ease;
+
+        // Fix for blurry animation
+        backface-visibility: hidden;
+    }
+}
+
+ // Display for projects tab
+ .projects-grid {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 2rem;
+
+    @include desktop {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    a {
+        overflow: hidden;
+        box-shadow:  0px 20px 50px #15151c33;
+        border-radius: 0.3rem;
+    }
+  }
+
+  .projects {
+      padding: 4rem 0;
+  }
