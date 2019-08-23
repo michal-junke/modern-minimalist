@@ -3,9 +3,19 @@
 {% block content %}
 
 {% if post.thumbnail.src %}
-<img src="{{post.thumbnail.src('large')}}" />
+<div class="card">
+    <div class="card-image">
+        <figure class="image is-3by2">
+            <img src="{{post.thumbnail.src('large')}}" />
+        </figure>
+    </div>
 {% endif %}
-<h2 class="h2"><a href="{{post.link}}">{{post.title}}</a></h2>
-<p>{{post.preview.length(50)}}</p>
-
+    <div class="card-content content">
+        <h2><a href="{{post.link}}">{{post.title}}</a></h2>
+        <p>{{post.preview.length(50).read_more(false)}}</p>
+        <div class="mj-card-footer has-text-centered">
+            <a href="{{post.link}}" aria-label="Przejdź do wpisu {{post.title}}" class="button is-info has-text-centered">Czytaj dalej</a>
+        </div>
+    </div>
+</div>
 {% endblock %}
