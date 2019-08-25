@@ -217,7 +217,19 @@ add_filter( 'render_block', function( $block_content, $block ) {
 	return $block_content;
 }, 5, 2 );
 
+// Adding custom image sizes
+
+add_image_size('grid-wide', 560);
+add_image_size('fullwidth', 1920);
+
+// Register the three useful image sizes for use in Add Media modal
+add_filter( 'image_size_names_choose', 'mj_custom_sizes' );
+function mj_custom_sizes( $sizes ) {
+    return array_merge( $sizes, array(
         'grid-wide' => __( 'Grid Wide' ),
+        'fullwidth' => __( 'Full Width' ),
+    ) );
+}
 	// Stop recording IP address in comments
 function mj_remove_commentsip( $comment_author_ip ) {
 	return '';

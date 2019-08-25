@@ -37,3 +37,14 @@ Install this theme as you would any other, and be sure the Timber plugin is acti
 * [A real live Timber theme](https://github.com/laras126/yuling-theme).
 * [Timber Video Tutorials](http://timber.github.io/timber/#video-tutorials) and [an incomplete set of screencasts](https://www.youtube.com/playlist?list=PLuIlodXmVQ6pkqWyR6mtQ5gQZ6BrnuFx-) for building a Timber theme from scratch.
 
+
+## Image sizes
+
+| Nazwa     | Szerokość | Wysokość    | Opis                                                            | kod       |
+| --------- | --------- | ----------- | --------------------------------------------------------------- | --------- |
+| Thumbnail | 150       | 150         | Crops to selection                                              | thumbnail |
+| Medium    | 350       | max. (9999) | Does not crop, makes width 350                                  | medium    |
+| Large     | 700       | max.        |                                                                 | large     |
+| Grid-wide | 560       | max.        | Used with images in **grid-wide** position                      | grid-wide |
+| Fullwidth | 1920      | max.        | Uses full width of the website                                  |           |
+
