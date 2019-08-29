@@ -1,3 +1,23 @@
+.wp-block-image.grid-xl {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.content p a {
+    background:
+        linear-gradient(to bottom, $primary 0%, $primary 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 4px 4px;
+    color: #000;
+    text-decoration: none;
+    transition: background-size .2s;
+}
+
+.content p a:hover {
+    background-size: 4px 50px;
+}
+
 .navbar-item a:hover, .mj-footer-link a:hover {
     background:
         linear-gradient(to bottom, $primary 0%, $primary 100%);

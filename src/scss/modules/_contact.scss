@@ -1,0 +1,12 @@
+body.page-kontakt {
+    
+    article.content {
+        margin-bottom: 0;
+    }
+    &.page section#content {
+        margin-bottom: 0 !important;
+    }
+    figure {
+        margin-bottom: -0.4rem;
+    }
+}

@@ -13,7 +13,7 @@
   
   // If width of the container is smaller than grid-header -> aplly second widest position (not fullwidth) to all elements to avoid bigger gap on the sides
   @media (max-width: 1199px) {
-    .grid > *, .grid-wide {
+    .grid > *:not(.grid-xl), .grid-wide {
       grid-column: header;
     }
   }
