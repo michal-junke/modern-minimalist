@@ -23,4 +23,15 @@
     <meta name="msapplication-config" content="/wp-content/themes/modern-minimalist/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
     {# Favicon END #}
+    {# GA #}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117120549-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-117120549-3', { 'anonymize_ip': true });
+    </script>
+
     {{function('wp_head')}}
